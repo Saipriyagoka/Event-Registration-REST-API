@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/EventStyle.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+  </head>
+  <body>
+
+    <div class="w3-bar w3-border w3-teal w3-large">
+    <i class="w3-bar-item w3-button w3-xlarge"><i class="fa fa-home"></i></i>
+      <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-right ">Login</a>
+      <a href="{% url 'signup' %}" class="w3-bar-item w3-button w3-right">SignUp</a>
+    </div>
+
+
+      {% block body-block%}
+      <div style="padding:0 16px;">
+        <center>
+          <p><b>
+            <span class='a'>E</span>
+            <span class='b'>v</span>
+           <span class='c'>e</span>
+           <span class='d'>n</span>
+           <span class='e'>t</span>
+           <span class='f'>s</span>
+
+           </b></p>
+        </center>
+    </div>
+      <!-- anything outside of this will be inherited if you extend -->
+      {% endblock %}
+
+  </body>
+</html>

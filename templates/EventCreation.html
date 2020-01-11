@@ -1,0 +1,17 @@
+{% extends 'ListEvent.html' %}
+{% load rest_framework %}
+{% block title %}Event Creation{% endblock %}
+
+{% block body-block %}
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+      <form method="post" enctype="multipart/form-data" action="{% url 'create' %}">
+        {% csrf_token %}
+        {% render_form serializer %}
+        <button class="w3-bar-item w3-button w3-large w3-teal" type="submit">CreateEvent</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

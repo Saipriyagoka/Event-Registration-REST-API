@@ -1,0 +1,3 @@
+
+djangorestframework==3.10.2
+djangorestframework-yaml==1.0.3

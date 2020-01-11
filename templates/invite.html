@@ -1,0 +1,27 @@
+{% extends 'ListEvent.html' %}
+
+{% block title %}Event Creation{% endblock %}
+
+{% block body-block %}
+<!-- Left Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
+  <a href="{% url 'list' %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Home</a>
+</div>
+<!-- Page Content -->
+<div style="margin-left:25%">
+  <div style="text-align: center;">
+      <div style="display: inline-block; text-align: left;">
+        <h2>Invite Users</h2><br>
+        <form method="post" action = "{% url 'invite_save'%}">
+          {% csrf_token %}
+          {% for user_detail in user_details %}
+              <label>{{ user_detail.username }}</label>
+              <input type="checkbox" value="{{ user_detail.username }}" class ="w3-check w3-large" name="invite_user[]"><br>
+          {% endfor %}<br>
+          <button class="w3-button w3-teal" type="submit">submit</button>
+        </form>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

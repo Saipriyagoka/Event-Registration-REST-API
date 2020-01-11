@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load rest_framework %}
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="{% static 'css/EventStyle.css' %}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+  </head>
+  <body>
+
+    <div class="w3-bar w3-border w3-teal w3-large w3-mobile " >
+        <div class="w3-bar-item w3-xlarge w3-mobile"><i class="fa fa-bars"></i></div>
+
+        <div class="w3-bar-item w3-xlarge w3-mobile " style="margin-left:450px">
+          <i class="material-icons">person</i>
+          <i class='profile'>{% if user.is_authenticated %}
+           {{ user.username }}
+           {% endif %}
+        </i></div>
+
+          <form class="w3-bar-item w3-xlarge  w3-right w3-mobile" action="{% url 'logout' %}"  method="post">
+              {% csrf_token %}
+            <button class="w3-button w3-xlarge w3-mobile w3-right" type='submit'  >Logout</button>
+          </form>
+      </div>
+  {% block body-block%}
+  {% endblock %}

@@ -1,0 +1,22 @@
+
+{% extends 'ListEvent.html' %}
+{% load rest_framework %}
+{% block title %}Event Creation{% endblock %}
+
+{% block body-block %}
+<!-- Left Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
+  <a href="{% url 'list' %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Home</a>
+</div>
+<!-- Page Content -->
+<div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+      <form method="post" enctype="multipart/form-data" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% render_form serializer %}
+        <button class="w3-bar-item w3-button w3-large w3-teal" type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
