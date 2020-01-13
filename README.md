@@ -23,18 +23,17 @@ Here you go,
 
 Once you logged in,
 You can Start with clicking on CreateEvent,
-![Screenshot (76)](https://user-images.githubusercontent.com/49297116/71787281-ddc37780-303b-11ea-8762-ba4f1f055fb4.png)
+
+![Screenshot (84)](https://user-images.githubusercontent.com/49297116/72288739-b9851d80-366f-11ea-8d9d-421aca2ad5b4.png)
 
 ![Screenshot (79)](https://user-images.githubusercontent.com/49297116/72209561-ca019080-34d5-11ea-9ea9-3c2398c80c43.png)
 
 
-Once you submit the the form,You can see the list of Events.
-![Screenshot (77)](https://user-images.githubusercontent.com/49297116/71787282-ddc37780-303b-11ea-8e52-f569fcb7247f.png)
-
 Click on the Event to know complete information inlcudes happening Date and all.
 
-![Screenshot (80)](https://user-images.githubusercontent.com/49297116/72209599-219ffc00-34d6-11ea-9fa3-78523a88fce9.png)
+ ![Screenshot (85)](https://user-images.githubusercontent.com/49297116/72288862-f6e9ab00-366f-11ea-9da0-da8090010afd.png)
 
 You can register by clicking on Register button.
 
-![Screenshot (83)](https://user-images.githubusercontent.com/49297116/72248667-b6614180-361d-11ea-9e3f-8801b1ad850e.png)
+![Screenshot (86)](https://user-images.githubusercontent.com/49297116/72288942-1c76b480-3670-11ea-854d-4f255d38c50e.png)
+
