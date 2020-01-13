@@ -2,13 +2,13 @@
 This Project demonstrates How to Design and build a REST API for Event Registration
 
 # Requirements
-* ##### Users can create events
-* ##### Users can limit the number of attendees
-* ##### Users can delete an event
-* ##### Users can view public events
-* ##### Private events can be viewed only by invited users
-* ##### Users should be able to register/unregister for an event
-* ##### Users cannot register for another event if its schedule overlaps with a previously registered event
+* ###### Users can create events
+* ###### Users can limit the number of attendees
+* ###### Users can delete an event
+* ###### Users can view public events
+* ###### Private events can be viewed only by invited users
+* ###### Users should be able to register/unregister for an event
+* ###### Users cannot register for another event if its schedule overlaps with a previously registered event
 
 
 # REST API Documentation
@@ -37,4 +37,4 @@ Click on the Event to know complete information inlcudes happening Date and all.
 
 You can register by clicking on Register button.
 
-![Screenshot (81)](https://user-images.githubusercontent.com/49297116/72209660-7a6f9480-34d6-11ea-887f-69c7af55d519.png)
+![Screenshot (83)](https://user-images.githubusercontent.com/49297116/72248667-b6614180-361d-11ea-9e3f-8801b1ad850e.png)
