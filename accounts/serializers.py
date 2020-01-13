@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from accounts.models import Participant,Event
 
+
 class ParticipantSerializer(serializers.ModelSerializer):
-	#event = serializers.PrimaryKeyRelatedField(many=True, queryset=Event.objects.all(),read_only=True)
 	class Meta:
 		model = Participant
 		fields = '__all__'

@@ -1,10 +1,11 @@
-# users/models.py
+
 from django.db import models
 from django.conf import settings
 import uuid
 from django.contrib.auth.models import User
 from django.conf import settings
 User = settings.AUTH_USER_MODEL
+from phonenumber_field.modelfields import PhoneNumberField
 
 class Event(models.Model):
     EventId                 = models.UUIDField(primary_key=True,default=uuid.uuid4, editable=False,null=False)
@@ -28,7 +29,7 @@ class Participant(models.Model):
     user                    = models.ForeignKey(User, on_delete=models.CASCADE)
     event                   = models.ManyToManyField(Event ,related_name='participants')
     Participation_date      = models.DateField()
-    mobile                  = models.IntegerField()
+    mobileno                = PhoneNumberField(default='')
     location                = models.CharField(max_length = 264)
 
     def __str__(self):

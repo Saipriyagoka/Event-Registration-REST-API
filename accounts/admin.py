@@ -10,6 +10,6 @@ admin.site.register(Event,EventAdmin)
 
 class ParticipantAdmin(admin.ModelAdmin):
     form = ParticipantForm
-    list_display = ['user', 'get_event','Participation_date','mobile','location']
+    list_display = ['user', 'get_event','Participation_date','location']
 
 admin.site.register(Participant,ParticipantAdmin)

@@ -57,9 +57,13 @@ class APIEventRetrieveView(generics.RetrieveUpdateAPIView):
          serializer = EventSerializer(queryset1)
          return Response({'EventRetrieve_obj' : serializer.data ,'abc':details})
 
-class APIEventDeleteView(generics.DestroyAPIView):
-    queryset = Event.objects.all()
-    serializer_class = EventSerializer
+# class APIEventDeleteView(generics.DestroyAPIView):
+#     queryset = Event.objects.all()
+#     serializer_class = EventSerializer
+
+def APIEventDeleteView(request,EventId):
+    Event.objects.filter(EventId = EventId).delete()
+    return redirect('list')
 
 class APIParticipantListView(generics.ListAPIView):
     queryset = Participant.objects.all()
@@ -74,23 +78,11 @@ class APIParticipantCreateView(generics.ListCreateAPIView):
         return Response({'serializer':serializer,'EventName':EventName})
 
     def post(self, request,EventName):
-        #Participant_obj = Participant.objects.get(user=self.request.user)
-        Event_details = Event.objects.get(EventName = EventName) #for set
-        #Participant_obj.Event.set(Event_details)
-        #Participant_obj.Participation_date = Event_details.Event_Date
-        #Participant_obj.save()
-
         serializer = ParticipantSerializer(data=self.request.data,context={'request': request,'EventName':EventName})
-        #serializer.event.set(Event_details)
-        #serializer.Participation_date = Event_details.Event_Date
         if not serializer.is_valid():
             return Response({'serializer': serializer,'EventName':EventName})
         serializer.save()
         return redirect('apiretrieve' , EventName)
-
-# class APIParticipantDeleteView(generics.DestroyAPIView):
-#     queryset = Participant.objects.all()
-#     serializer_class = ParticipantSerializer
 
 def APIParticipantDeleteView(request,id,EventName):
     Participant.objects.filter(id = id).delete()
