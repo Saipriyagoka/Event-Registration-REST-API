@@ -33,3 +33,6 @@ class Participant(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def get_event(self):
+        return ",".join([str(p) for p in self.event.all()])
