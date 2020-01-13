@@ -16,13 +16,14 @@
   {% if EventRetrieve_obj.participants %}
     {% if EventRetrieve_obj.participants|length  <= EventRetrieve_obj.Participants_Limit %}
       {% for p in EventRetrieve_obj.participants %}
-        {% if  user.id != p.id %}
+        {% if  user.id != p.user %}
             <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:20%;right:0;">
-              <a href="{% url 'register'%}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Register</a>
+              <a href="{% url 'register' EventRetrieve_obj.EventName %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Register</a>
             </div>
         {% else %}
             <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:20%;right:0;">
-              <a href="{% url 'ParticipantDelete' p.id %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">UnRegister</a>
+              <h3>You are successfully Registered.</h3><br>
+              <a href="{% url 'ParticipantDelete' p.id EventRetrieve_obj.EventName %}" class="w3-bar-item w3-button w3-xlarge w3-teal">UnRegister</a>
             </div>
         {% endif %}
       {% endfor %}
@@ -33,7 +34,7 @@
   {% endif %}
 {% else %}
     <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:20%;right:0;">
-      <a href="{% url 'register' %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Register</a>
+      <a href="{% url 'register' EventRetrieve_obj.EventName %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Register</a>
     </div>
 {% endif %}
 {% else %}
@@ -56,17 +57,13 @@
                       <img src='{{ k.Image.url }}' width='630' height="295"  alt='event' >
                       <br>{% endif %}  {% endfor %}
                     <br>
-
                     <h3>{{ EventRetrieve_obj.Description }}
-                      <br>
-                      <br>
-                      DATE : {{ EventRetrieve_obj.Event_Date }}<br><br>
-                      Number of Participants :<br>
+                      <br><br>
+                      DATE : {{ EventRetrieve_obj.Event_Date }}<br>
+                    <br>
+                      Number of Participants :
                       {{EventRetrieve_obj.participants|length}}<br>
-                      <!-- ParticipationDate:<br>
-                      {% for p in EventRetrieve_obj.participants %}
-                          {{p.Participation_date}} <br>
-                    {% endfor %} -->
+
                     </h3>
             {% else %}
                 <center><h1><b>{{ EventRetrieve_obj.EventName }}</b></h1></center>
