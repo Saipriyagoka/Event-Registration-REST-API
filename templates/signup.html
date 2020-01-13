@@ -4,15 +4,13 @@
 
 {% block body-block %}
 
-
-
-<div style="text-align: center;">
+<div style="text-align: center;" class=' w3-tangerine w3-large'>
     <div style="display: inline-block; text-align: left;">
       <h2>Sign up</h2>
       <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class="w3-button w3-teal" type="submit">Sign up</button>
+        <button class="w3-button w3-panel w3-teal w3-opacity w3-xlarge w3-hover-teal " type="submit">Sign up</button>
       </form>
     </div>
   </div>

@@ -9,16 +9,23 @@
       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+      <style>
+      .w3-tangerine {
+  font-family: "Tangerine", serif;
+}
+    </style>
     <title></title>
   </head>
   <body>
 
-    <div class="w3-bar w3-border w3-teal w3-large w3-mobile " >
+    <div class="w3-bar w3-border w3-teal w3-large w3-mobile w3-tangerine  " >
         <div class="w3-bar-item w3-xlarge w3-mobile"><i class="fa fa-bars"></i></div>
 
         <div class="w3-bar-item w3-xlarge w3-mobile " style="margin-left:450px">
           <i class="material-icons">person</i>
-          <i class='profile'>{% if user.is_authenticated %}
+          <i class='profile w3-xxlarge '>{% if user.is_authenticated %}
            {{ user.username }}
            {% endif %}
         </i></div>

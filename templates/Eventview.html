@@ -4,11 +4,11 @@
 
 {% block body-block %}
 <!-- Left Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
-    <a href="{% url 'list' %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Home</a>
+<div class="w3-sidebar w3-light-grey w3-bar-block w3-tangerine" style="width:20%">
+    <a href="{% url 'list' %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink w3-panel w3-pink w3-opacity">Home</a>
     <!-- Delete Event -->
     {% if EventRetrieve_obj.created_by == user.id %}
-        <a href="{% url 'Eventdelete' EventRetrieve_obj.EventId %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">DeleteEvent</a>
+        <a href="{% url 'Eventdelete' EventRetrieve_obj.EventId %}" class="w3-bar-item w3-panel w3-pink w3-opacity w3-button w3-xlarge w3-hover-pink">DeleteEvent</a>
       {% endif %}
 </div>
 <!--Right Sidebar -->
@@ -17,60 +17,59 @@
     {% if EventRetrieve_obj.participants|length  <= EventRetrieve_obj.Participants_Limit %}
       {% for p in EventRetrieve_obj.participants %}
         {% if  user.id != p.user %}
-            <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:20%;right:0;">
-              <a href="{% url 'register' EventRetrieve_obj.EventName %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Register</a>
+            <div class="w3-sidebar w3-light-grey w3-bar-block w3-card w3-tangerine" style="width:20%;right:0;">
+              <a href="{% url 'register' EventRetrieve_obj.EventName %}" class="w3-bar-item w3-panel w3-pink w3-opacity w3-button w3-xlarge w3-hover-pink">Register</a>
             </div>
         {% else %}
-            <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:20%;right:0;">
+            <div class="w3-sidebar w3-light-grey w3-bar-block w3-card w3-tangerine" style="width:20%;right:0;">
               <h3>You are successfully Registered.</h3><br>
-              <a href="{% url 'ParticipantDelete' p.id EventRetrieve_obj.EventName %}" class="w3-bar-item w3-button w3-xlarge w3-teal">UnRegister</a>
+              <a href="{% url 'ParticipantDelete' p.id EventRetrieve_obj.EventName %}" class="w3-bar-item w3-panel w3-pink w3-opacity w3-button w3-xlarge w3-teal">UnRegister</a>
             </div>
         {% endif %}
       {% endfor %}
     {% else %}
-      <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:25%;right:0;">
+      <div class="w3-sidebar w3-light-grey w3-bar-block w3-card w3-tangerine" style="width:25%;right:0;">
          <h2>Registrations are closed</h2>
       </div>
   {% endif %}
 {% else %}
-    <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:20%;right:0;">
-      <a href="{% url 'register' EventRetrieve_obj.EventName %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">Register</a>
+    <div class="w3-sidebar w3-light-grey w3-bar-block w3-card w3-tangerine" style="width:20%;right:0;">
+      <a href="{% url 'register' EventRetrieve_obj.EventName %}" class="w3-bar-item w3-panel w3-pink w3-opacity w3-button w3-xlarge w3-hover-pink">Register</a>
     </div>
 {% endif %}
 {% else %}
     {% if EventRetrieve_obj.created_by == user.id %}
-    <div class="w3-sidebar w3-light-grey w3-bar-block w3-card" style="width:20%;right:0;">
-      <a href="{% url 'invite'%}" class="w3-bar-item w3-button w3-xlarge w3-hover-teal">Invite Users</a><br>
+    <div class="w3-sidebar w3-light-grey w3-bar-block w3-card w3-tangerine" style="width:20%;right:0;">
+      <a href="{% url 'invite'%}" class="w3-bar-item w3-button w3-panel w3-pink w3-opacity w3-xlarge w3-hover-teal">Invite Users</a><br>
     </div>
     {% endif %}
 {% endif %}
 <!-- Page Content -->
 
 <div style="margin-left:25%">
-<div class="w3-container  w3-mobile w3-cell">
+<div class="w3-container w3-tangerine w3-mobile w3-cell">
 
       {% if EventRetrieve_obj %}
             {% if EventRetrieve_obj.Event_type == 'PB' %}
-                    <center><h1><b>{{ EventRetrieve_obj.EventName }}</b></h1></center>
+                    <center><h1 class='w3-tangerine w3-xxxlarge'><b>{{ EventRetrieve_obj.EventName }}</b></h1></center>
                     {% for k in abc %}
                       {% if k.EventName == EventRetrieve_obj.EventName %}
                       <img src='{{ k.Image.url }}' width='630' height="295"  alt='event' >
                       <br>{% endif %}  {% endfor %}
                     <br>
-                    <h3>{{ EventRetrieve_obj.Description }}
+                    <h3 class=' w3-tangerine w3-xlarge'>{{ EventRetrieve_obj.Description }}
                       <br><br>
-                      DATE : {{ EventRetrieve_obj.Event_Date }}<br>
+                    <b>  DATE : </b>{{ EventRetrieve_obj.Event_Date }}<br>
                     <br>
-                      Number of Participants :
+                    <b>  Number of Participants :</b>
                       {{EventRetrieve_obj.participants|length}}<br>
-
                     </h3>
             {% else %}
-                <center><h1><b>{{ EventRetrieve_obj.EventName }}</b></h1></center>
+                <center><h1 class='w3-tangerine w3-xlarge'><b>{{ EventRetrieve_obj.EventName }}</b></h1></center>
                 <img src='{{ EventRetrieve_obj.Image.url }}' width='630' height="350"  alt='event' >
                 <br>
 
-                <h3>{{ EventRetrieve_obj.Description }}
+                <h3 class='w3-tangerine w3-xlarge'>{{ EventRetrieve_obj.Description }}
                   <br>
                   <br>
                   DATE : {{ EventRetrieve_obj.Event_Date }}<br><br>

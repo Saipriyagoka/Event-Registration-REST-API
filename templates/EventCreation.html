@@ -3,12 +3,12 @@
 {% block title %}Event Creation{% endblock %}
 
 {% block body-block %}
-<div style="text-align: center;">
+<div style="text-align: center;"  class=' w3-tangerine w3-large'>
     <div style="display: inline-block; text-align: left;">
       <form method="post" enctype="multipart/form-data" action="{% url 'create' %}">
         {% csrf_token %}
         {% render_form serializer %}
-        <button class="w3-bar-item w3-button w3-large w3-teal" type="submit">CreateEvent</button>
+        <button class="w3-bar-item w3-button w3-panel w3-teal w3-opacity w3-xlarge w3-hover-teal " type="submit">CreateEvent</button>
       </form>
 
     </div>

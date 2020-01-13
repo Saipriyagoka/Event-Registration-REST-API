@@ -5,14 +5,14 @@
 {% block body-block %}
 
 <!-- Sidebar -->
-<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
-  <a href="{% url 'create' %}" class="w3-bar-item w3-button w3-xlarge w3-hover-pink">CreateEvent</a>
+<div class="w3-sidebar w3-light-grey w3-bar-block w3-tangerine"  style="width:20%">
+  <a href="{% url 'create' %}" class="w3-bar-item w3-button w3-panel w3-pink w3-opacity w3-xxlarge w3-hover-pink ">CreateEvent</a>
 </div>
 
 <!-- Page Content -->
 <div style="margin-left:25%">
 
-<div class="w3-container ">
+<div class="w3-container w3-tangerine ">
   <center>
   <p><b>
     <span class='a'>E</span>
@@ -21,20 +21,15 @@
    <span class='d'>n</span>
    <span class='e'>t</span>
    <span class='f'>s</span>
-
    </b></p>
-</center>
-{{invite_users_obj}}
-<div style="text-align: center;">
-    <div style="display: inline-block; text-align: left;">
    {% for k in EventList_obj %}
-
-        <h2><a href="{% url 'apiretrieve' k.EventName %}" > {{ k.EventName }}</a><br><br></h2>
-           <img src='{{ k.Image.url }}' width='750' height="350" alt='event' ><br><br>
-
-
-
+   <div class="w3-container w3-tangerine ">
+      <a href="{% url 'apiretrieve' k.EventName %}" class='w3-panel w3-button w3-pink w3-opacity w3-hover-pink w3-xxlarge'> {{ k.EventName }}</a><br>
+      <img src='{{ k.Image.url }}' width='750' height="350" alt='event' ><br><br>
+    </div>
    {% endfor %}
+   </center>
 </div>
 </div>
+
   {% endblock %}
