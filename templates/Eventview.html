@@ -23,7 +23,7 @@
         {% else %}
             <div class="w3-sidebar w3-light-grey w3-bar-block w3-card w3-tangerine" style="width:20%;right:0;">
               <h3>You are successfully Registered.</h3><br>
-              <a href="{% url 'ParticipantDelete' p.id EventRetrieve_obj.EventName %}" class="w3-bar-item w3-panel w3-pink w3-opacity w3-button w3-xlarge w3-teal">UnRegister</a>
+              <a href="{% url 'ParticipantDelete' p.id EventRetrieve_obj.EventName %}" class="w3-bar-item w3-panel w3-pink w3-opacity w3-button w3-xlarge w3-hover-pink">UnRegister</a>
             </div>
         {% endif %}
       {% endfor %}

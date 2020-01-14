@@ -32,7 +32,7 @@
 
           <form class="w3-bar-item w3-xlarge  w3-right w3-mobile" action="{% url 'logout' %}"  method="post">
               {% csrf_token %}
-            <button class="w3-button w3-xlarge w3-mobile w3-right" type='submit'  >Logout</button>
+            <button class="w3-button w3-xlarge w3-hover-teal w3-mobile w3-right" type='submit'  >Logout</button>
           </form>
       </div>
   {% block body-block%}

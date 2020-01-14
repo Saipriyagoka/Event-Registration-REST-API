@@ -3,6 +3,11 @@
 {% block title %}Event Creation{% endblock %}
 
 {% block body-block %}
+<!-- Left Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block  w3-tangerine" style="width:20%">
+  <a href="{% url 'list' %}" class="w3-bar-item w3-panel w3-pink w3-opacity  w3-button w3-xlarge w3-hover-pink">Home</a>
+</div>
+<!-- Page Content -->
 <div style="text-align: center;"  class=' w3-tangerine w3-large'>
     <div style="display: inline-block; text-align: left;">
       <form method="post" enctype="multipart/form-data" action="{% url 'create' %}">
