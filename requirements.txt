@@ -1,5 +1,5 @@
 
-djangorestframework==3.10.2
+djangorestframework==3.11.2
 djangorestframework-yaml==1.0.3
 django-phonenumber-field==4.0.0
 phonenumbers==8.11.1
